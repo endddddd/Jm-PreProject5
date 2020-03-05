@@ -2,8 +2,6 @@ package service;
 
 import dao.UserDaoFactory;
 import dao.UserDAO;
-import dao.UserHibernateDAO;
-import dao.UserJdbcDAO;
 import exceptions.DBException;
 import model.User;
 
@@ -65,7 +63,6 @@ public class UserService {
         return dao.getUserById(id);
     }
 
-
     // Проверяем на нулл и совпадение логина и пароля, в случае удачи получаем пользователя
     public User validateUser(String name, String password) {
         if (name.trim().length() == 0 || password.trim().length() == 0 || !dao.validateUser(name, password)) {
@@ -74,7 +71,6 @@ public class UserService {
             return dao.getUserByName(name);
         }
     }
-
 }
 
 

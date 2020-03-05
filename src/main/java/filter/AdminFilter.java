@@ -22,7 +22,5 @@ public class AdminFilter implements Filter {
 
         }
         filterChain.doFilter(request, response);
-
     }
-
 }
